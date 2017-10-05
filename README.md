@@ -23,7 +23,7 @@ This will keep our server reloading automatically whenever you update something 
 
 Unfortunately our API to get our favorite beers is currenlty broken
 
-Look over the app.js and models/beer.js files to try to fix the API.
+Look over the app.js file to try to fix the API.
 
 Start fixing the API in the following order:
 1. Get All Beers (GET Request)
