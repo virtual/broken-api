@@ -1,0 +1,106 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Express Mongo Beer API ",
+		"_postman_id": "0b099c78-6161-131e-d08e-75d450ed854c",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Beers",
+			"request": {
+				"url": "http://localhost:3000/api/beers/",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get One Beer by ID",
+			"request": {
+				"url": "http://localhost:3000/api/beers/ADD__BEER__ID",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add One Beer",
+			"request": {
+				"url": "http://localhost:3000/api/beers/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Citrusaurus",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "brewery",
+							"value": "Bridger Brewing",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "alcoholContent",
+							"value": "7",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update One Beer by ID",
+			"request": {
+				"url": "http://localhost:3000/api/beers/ADD__BEER__ID",
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  name: \"Citrusaurus\",\n    brewery: \"Bridger Brewing\",\n    alcoholContent: 6\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete One Beer by ID",
+			"request": {
+				"url": "http://localhost:3000/api/beers/ADD__BEER__ID",
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
