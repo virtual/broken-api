@@ -38,14 +38,12 @@ module.exports.updateBeer = (id, beer, options, callback) => {
 	var query = {_id: id};
 	var update = {
 		name: beer.name,
-		brewery: beer.brewery,
-		alcoholContent: beer.alcoholContent
+		brewery: beer.brewery
 	}
 	Beer.findOneAndUpdate(query, update, options, callback);
 }
 
 // Delete Beer
 module.exports.removeBeer = (id, callback) => {
-	var query = {_id: id};
 	Beer.remove(query, callback);
 }
