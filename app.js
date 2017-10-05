@@ -1,8 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
 
-Beer = require('./models/beer');
+Beer = require('./models/beers');
 
 var app = express();
 
@@ -11,7 +10,7 @@ var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.set('port', 3000);
+app.set('port', 123456);
 
 // Connect to MongoDB database via Mongoose library
 mongoose.connect('mongodb://localhost/beerFavs');
@@ -23,7 +22,7 @@ app.get('/', (req, res) => {
 });
 
 // Get beer list
-app.get('/api/beers', (req, res) => {
+app.get('/beers', (req, res) => {
 	Beer.getBeers((err) => {
 		if(err){
 			throw err;
@@ -33,8 +32,8 @@ app.get('/api/beers', (req, res) => {
 });
 
 // Get one specific beer by id
-app.get('/api/beers/:_id', (req, res) => {
-	Beer.getBeerById(req.params._id, (err, beer) => {
+app.get('/api/beers/_id', (req, res) => {
+	Beer.getBeer(req.params._id, (err, beer) => {
 		if(err){
 			throw err;
 		}
@@ -43,7 +42,7 @@ app.get('/api/beers/:_id', (req, res) => {
 });
 
 // Add new beer to list
-app.post('/api/beers', (req, res) => {
+app('/api/beers', (req, res) => {
 	var newBeer = req.body;
 	Beer.addBeer(newBeer, (err, beer) => {
 		if(err){

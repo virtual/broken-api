@@ -29,7 +29,7 @@ module.exports.getBeerById = (id, callback) => {
 }
 
 // Add Beer
-module.exports.addBeer = (newBeer, callback) => {
+module.exports.addBeer = (callback) => {
 	Beer.create(newBeer, callback);
 }
 
