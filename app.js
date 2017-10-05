@@ -22,8 +22,8 @@ app.get('/', (req, res) => {
 });
 
 // Get beer list
-app.get('/beers', (req, res) => {
-	Beer.getBeers((err) => {
+app.get('/api/beers', (req, res) => {
+	Beer.getBeers((err, beers) => {
 		if(err){
 			throw err;
 		}
