@@ -32,48 +32,52 @@ app.get('/beers', (req, res) => {
 });
 
 // Get one specific beer by id
-app.get('/api/beers/_id', (req, res) => {
-	Beer.getBeer(req.params._id, (err, beer) => {
-		if(err){
-			throw err;
-		}
-		res.json(beer);
-	});
-});
+// UNCOMMENT FUNCTION BELOW ONCE YOU SOLVED GETTING ALL BEERS
+// app.get('/api/beers/_id', (req, res) => {
+// 	Beer.getBeer(req.params._id, (err, beer) => {
+// 		if(err){
+// 			throw err;
+// 		}
+// 		res.json(beer);
+// 	});
+// });
 
 // Add new beer to list
-app('/api/beers', (req, res) => {
-	var newBeer = req.body;
-	Beer.addBeer(newBeer, (err, beer) => {
-		if(err){
-			throw err;
-		}
-		res.json(beer);
-	});
-});
+// UNCOMMENT FUNCTION BELOW ONCE YOU SOLVED GETTING ONE BEER
+// app('/api/beers', (req, res) => {
+// 	var newBeer = req.body;
+// 	Beer.addBeer(newBeer, (err, beer) => {
+// 		if(err){
+// 			throw err;
+// 		}
+// 		res.json(beer);
+// 	});
+// });
 
 // Update one specific beer
-app.put('/api/beers/:_id', (req, res) => {
-	var id = req.params._id;
-	var updatedBeer = req.body;
-	Beer.updateBeer(id, updatedBeer, {}, (err, beer) => {
-		if(err){
-			throw err;
-		}
-		res.json(beer);
-	});
-});
+// UNCOMMENT FUNCTION BELOW ONCE YOU SOLVED GETTING ADDING ONE BEER
+// app.put('/api/beers/:_id', (req, res) => {
+// 	var id = req.params._id;
+// 	var updatedBeer = req.body;
+// 	Beer.updateBeer(id, updatedBeer, {}, (err, beer) => {
+// 		if(err){
+// 			throw err;
+// 		}
+// 		res.json(beer);
+// 	});
+// });
 
 // Delete one beer from list
-app.delete('/api/beers/:_id', (req, res) => {
-	var id = req.params._id;
-	Beer.removeBeer(id, (err, beer) => {
-		if(err){
-			throw err;
-		}
-		res.json(beer);
-	});
-});
+// UNCOMMENT FUNCTION BELOW ONCE YOU SOLVED UPADTING ONE BEER
+// app.delete('/api/beers/:_id', (req, res) => {
+// 	var id = req.params._id;
+// 	Beer.removeBeer(id, (err, beer) => {
+// 		if(err){
+// 			throw err;
+// 		}
+// 		res.json(beer);
+// 	});
+// });
 
 app.listen(app.get('port'), function() {
   console.log('Web Server started on port ' + app.get('port'));
