@@ -69,15 +69,15 @@ app.put('/api/beers/:_id', (req, res) => {
 
 // Delete one beer from list
 // UNCOMMENT FUNCTION BELOW ONCE YOU SOLVED UPADTING ONE BEER
-// app.delete('/api/beers/:_id', (req, res) => {
-// 	var query = {_id: id};
-// 	Beer.remove(query, (err, beer) => {
-// 		if(err){
-// 			throw err;
-// 		}
-// 		res.json(beer);
-// 	});
-// });
+app.delete('/api/beers/:_id', (req, res) => {
+	var query = {_id: req.params._id};
+	Beer.findByIdAndRemove(query, (err, beer) => {
+		if(err){
+			throw err;
+		}
+		res.json(beer); 
+	});
+});
 
 app.listen(app.get('port'), function() {
   console.log('Web Server started on port ' + app.get('port'));
