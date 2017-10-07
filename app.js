@@ -19,7 +19,7 @@ var db = mongoose.connection;
 
 // RESTful API
 app.get('/', (req, res) => {
-	res.send('Please use /api/beers');
+	res.redirect('/api/beers');
 });
 
 // Get beer list
@@ -58,12 +58,12 @@ app.post('/api/beers', (req, res) => {
 // Update one specific beer
 // UNCOMMENT FUNCTION BELOW ONCE YOU SOLVED GETTING ADDING ONE BEER
 app.put('/api/beers/:_id', (req, res) => {
-	var query = {_id: req.params._id};
-	Beer.findOneAndUpdate(query, updatedBeer, {}, (err, beer) => {
+  var query = {_id: req.params._id};   
+	Beer.findOneAndUpdate(query, req.body, (err, updatedBeer) => {
 		if(err){
 			throw err;
 		}
-		res.json(beer);
+		res.json(updatedBeer);
 	});
 });
 
